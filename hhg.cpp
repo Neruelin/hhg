@@ -2,21 +2,21 @@
 
 class Pop
 {
+private:
+    int map [26] = {};
 public:
     Pop ()
     {
-        map = {};
+    	
     }
-    void set(int index, value)
+    void set(int index, int value)
     {
         map[index] = value;
     }
-    int[] get()
+    int * get()
     {
         return map;
     }
-private:
-    int map [26];
 };
 
 class GA
