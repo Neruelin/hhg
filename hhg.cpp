@@ -16,9 +16,9 @@ public:
         for (i = 0; i < 26; i++) 
         {
             map[i] = 65 + (rand() % 26);
-            cout << map[i];
+            //cout << map[i];
         }	
-        cout << endl;
+        //cout << endl;
     }
     void set(int index, int value)
     {
@@ -28,17 +28,34 @@ public:
     {
         return map;
     }
+	void print() 
+	{
+		for (int i = 0; i < 26; i++) 
+		{
+			cout << map[i];
+		}
+	}
 };
 
 class GA
 {
 public:
-
-    GA ()
+    GA (int populationSize)
     {
+       cout << "Size of " << populationSize << " Initial Population:" << endl;
        
+	   for (int i = 0; i < populationSize; i++)
+	   {
+		   Population.push_back(Pop());
+	   }
+	   
+	   for (int i = 0; i < populationSize; i++) {
+		   cout << i + 1 << " : ";
+		   Population.at(i).print();
+		   cout << endl;
+	   }
+	   
     }
-    
 private:
     vector<Pop> Population;
 };
@@ -54,7 +71,12 @@ int main() {
           Pop();
           cin >> a;
     }
-    */
     
+    GA(10);
+    int a;
+    cin >> a;
+    */
+	
+	
     return 0;
 }
